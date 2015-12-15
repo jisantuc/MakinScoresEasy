@@ -1,5 +1,7 @@
-projname
+Makin' Scores Easy
 ========
+
+<img src="http://www.interviewmagazine.com/files/2008/11/21/img-martin-scorsese_14532014334.jpg" height="50%" width="50%"/>
 
 This project allows anyone to create custom scores for economics institutions based on their personal preferences about fields of study. There are two ways to use it. The first is from the command line with manually specified options, and the second uses config files. Maybe someday this will be available as a service using Heroku or something, but I'm not a magician, so whatever.
 
