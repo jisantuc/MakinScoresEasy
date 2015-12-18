@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" src="stylesheet.css" type="text/javascript">
+</head>
+<body>
+    <script type="text/javascript">
+        var table = document.querySelector('table');
+        table.class = 'resultstable'
+        var tds = document.querySelectorAll('td');
+        tds.forEach(function(elem, ind) {
+            if (ind % 2 == 0) {
+                elem.class='leftcol';
+                } else {
+                elem.class='scorecol';
+                }
+            });
+    </script><br>
+    Codes: {{ codes }}
+    <pre>{{ table | safe }}</pre>
+</body>
+</html>

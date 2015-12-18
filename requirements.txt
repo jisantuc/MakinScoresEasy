@@ -1,3 +1,6 @@
 pandas==0.17.1
 beautifulsoup4
 requests==2.2.1
+flask
+lxml
+html5lib

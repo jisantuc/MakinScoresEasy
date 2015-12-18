@@ -68,11 +68,6 @@ def weighted_scores(codes, weights=None):
     Table of weighted scores for each institution as pandas DataFrame
     """
 
-    # should be: join + suffixes? merge + suffixes? how does mult-join
-    # work again?
-    # alt: make single code score return a dict of {code: df} and use
-    # keys for suffixes
-
     dfs = {code: table_for_code(code, weight) for code, weight in
            zip(codes, weights)}
     indices = []
@@ -80,12 +75,10 @@ def weighted_scores(codes, weights=None):
                           map(lambda x: set(x.index.tolist()), dfs.values())))
     dfs = {code: dfs[code].reindex(indices).fillna(dfs[code]['Score'].max())
            for code in dfs.keys()}
-    for val in dfs.values():
-        print val.columns
 
     df = reduce(lambda x, y: x[['weighted_score']] + y[['weighted_score']],
                 dfs.values())
-    return df / sum(weights)
+    return (df / sum(weights)).sort_values('weighted_score').round(3)
 
 
 def read_config(config_file):

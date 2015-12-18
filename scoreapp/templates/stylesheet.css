@@ -1,0 +1,8 @@
+#resultstable {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+.leftcol {
+    width: 40%
+}
